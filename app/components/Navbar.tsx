@@ -8,10 +8,12 @@ export default function Navbar() {
       {/* <Link href="/" className="font-bold text-3xl">
         Dan<span className="text-red-500">Blog</span>
       </Link> */}
-      <span className="self-center whitespace-nowrap px-2 py-1 bg-gradient-to-r from-red-500 via-white-500 to bg-blue-500 rounded-xl text-white font-bold flex flex-row justify-around p-10">
-        <GiMountaintop className="size-10" />
-        mariposablog
-      </span>
+      <Link href="/">
+        <span className="self-center whitespace-nowrap px-2 py-1 bg-gradient-to-r from-red-500 via-white-500 to bg-blue-500 rounded-xl text-white font-bold flex flex-row justify-around p-10">
+          <GiMountaintop className="size-10" />
+          mariposablog
+        </span>
+      </Link>
       <ModeToggle />
     </nav>
   );
