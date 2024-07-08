@@ -21,7 +21,7 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: blogPost = await getData(params.slug);
-  console.log("data: ", data);
+  
   return (
     <div className="mt-8">
       <h1>
