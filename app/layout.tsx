@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "mariposaweb blog",
-  description: "Javascript Insights",
+  description: "JavaScript Insights",
 };
 
 export default function RootLayout({
@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={space_Grotesk.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
