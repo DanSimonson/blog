@@ -85,11 +85,12 @@ export default function Nav() {
               {click ? <FaTimes /> : <CiMenuFries />}
             </div>
           </div>
-        
+
           <section className="visible md:invisible">
             <div
               className="absolute left-0 w-[100vw] h-[100vh] transition-transform duration-300 ease-out"
               style={{
+                zIndex: '1',
                 marginTop: "34px",
                 backgroundColor: "white",
                 transform: click ? "scaleX(1)" : "scaleX(0)",

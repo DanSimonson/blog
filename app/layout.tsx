@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
 import Nav from "./components/Nav";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -26,9 +25,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Navbar/> */}
           <Nav />
-          <main className="max-w-2xl mx-auto px-2 py-5">{children}</main>
+          <main className="max-w-4xl mx-auto px-2 py-5">{children}</main>
         </ThemeProvider>
       </body>
     </html>
