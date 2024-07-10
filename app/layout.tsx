@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "mariposaweb blog",
   description: "JavaScript Insights",
 };
-
+// className="max-w-4xl mx-auto px-2 py-5"
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +26,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Nav />
-          <main className="max-w-4xl mx-auto px-2 py-5">{children}</main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

@@ -5,13 +5,13 @@ import { ModeToggle } from "@/components/ui/ModeToggle";
 import { GiMountaintop } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
+import { siteConfig } from "@/config/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [openTwo, setOpenTwo] = useState(false);
   const [openThree, setOpenThree] = useState(false);
   const [click, setClick] = useState(false);
-  const handleClick = () => {};
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function Nav() {
             <Link href="/">
               <span className="self-center whitespace-nowrap px-2 py-1 bg-gradient-to-r from-red-500 via-white-500 to bg-blue-500 rounded-xl text-white font-bold flex flex-row justify-around p-10">
                 <GiMountaintop className="size-10" />
-                mariposablog
+                GitHub
               </span>
             </Link>
           </div>
@@ -33,8 +33,13 @@ export default function Nav() {
                   onMouseLeave={() => setOpen(false)}
                   className="group relative h-fit w-fit"
                 >
-                  <a className="relative text-red-700 text-2xl">
-                    Profile
+                  <a
+                    href={siteConfig.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative text-red-700 text-2xl"
+                  >
+                    Github
                     <span
                       style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
                       className="absolute -bottom-2 -left-1 -right-2 h-1  origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
@@ -48,8 +53,13 @@ export default function Nav() {
                   onMouseLeave={() => setOpenTwo(false)}
                   className="group relative h-fit w-fit"
                 >
-                  <a className="relative text-red-700 text-2xl">
-                    Github
+                  <a
+                    href={siteConfig.links.twitter}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative text-red-700 text-2xl"
+                  >
+                    Twitter
                     <span
                       style={{ transform: openTwo ? "scaleX(1)" : "scaleX(0)" }}
                       className="absolute -bottom-2 -left-1 -right-2 h-1  origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
@@ -63,8 +73,13 @@ export default function Nav() {
                   onMouseLeave={() => setOpenThree(false)}
                   className="group relative h-fit w-fit"
                 >
-                  <a className="relative text-red-700 text-2xl">
-                    Linkedin
+                  <a
+                    href={siteConfig.links.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative text-red-700 text-2xl"
+                  >
+                    LinkedIn
                     <span
                       style={{
                         transform: openThree ? "scaleX(1)" : "scaleX(0)",
@@ -90,7 +105,7 @@ export default function Nav() {
             <div
               className="absolute left-0 w-[100vw] h-[100vh] transition-transform duration-300 ease-out"
               style={{
-                zIndex: '1',
+                zIndex: "1",
                 marginTop: "34px",
                 backgroundColor: "white",
                 transform: click ? "scaleX(1)" : "scaleX(0)",
