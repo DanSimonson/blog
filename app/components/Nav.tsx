@@ -5,7 +5,6 @@ import { ModeToggle } from "@/components/ui/ModeToggle";
 import { GiMountaintop } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
-import { Button } from "@/components/ui/button";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -27,9 +26,7 @@ export default function Nav() {
             </Link>
           </div>
           <div className="flex w-full justify-center">
-            <ul
-              className="gap-8 invisible md:visible md:flex md:justify-end  w-full mr-10"
-            >
+            <ul className="gap-8 invisible md:visible md:flex md:justify-end  w-full mr-10">
               <li className="mr-16 ml-6">
                 <div
                   onMouseEnter={() => setOpen(true)}
@@ -40,7 +37,7 @@ export default function Nav() {
                     Profile
                     <span
                       style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
-                      className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
+                      className="absolute -bottom-2 -left-1 -right-2 h-1  origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
                     />
                   </a>
                 </div>
@@ -55,7 +52,7 @@ export default function Nav() {
                     Github
                     <span
                       style={{ transform: openTwo ? "scaleX(1)" : "scaleX(0)" }}
-                      className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
+                      className="absolute -bottom-2 -left-1 -right-2 h-1  origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
                     />
                   </a>
                 </div>
@@ -72,7 +69,7 @@ export default function Nav() {
                       style={{
                         transform: openThree ? "scaleX(1)" : "scaleX(0)",
                       }}
-                      className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
+                      className="absolute -bottom-2 -left-1 -right-2 h-1  origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
                     />
                   </a>
                 </div>
@@ -83,12 +80,12 @@ export default function Nav() {
             <ModeToggle />
             <div
               onClick={() => setClick(!click)}
-              className="text-3xl cursor-pointer transition transform duration-3000 ease-in-out visible md:invisible"
+              className="text-3xl cursor-pointer transition transform duration-300 ease-in-out visible md:invisible"
             >
               {click ? <FaTimes /> : <CiMenuFries />}
             </div>
           </div>
-
+        
           <section className="visible md:invisible">
             <div
               className="absolute left-0 w-[100vw] h-[100vh] transition-transform duration-300 ease-out"
@@ -105,12 +102,8 @@ export default function Nav() {
                     onMouseLeave={() => setOpen(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl">
+                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
                       Profile
-                      <span
-                        style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
-                        className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
-                      />
                     </a>
                   </div>
                 </li>
@@ -120,14 +113,8 @@ export default function Nav() {
                     onMouseLeave={() => setOpenTwo(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl">
+                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
                       Github
-                      <span
-                        style={{
-                          transform: openTwo ? "scaleX(1)" : "scaleX(0)",
-                        }}
-                        className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
-                      />
                     </a>
                   </div>
                 </li>
@@ -137,14 +124,8 @@ export default function Nav() {
                     onMouseLeave={() => setOpenThree(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl">
+                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
                       Linkedin
-                      <span
-                        style={{
-                          transform: openThree ? "scaleX(1)" : "scaleX(0)",
-                        }}
-                        className="absolute -bottom-2 -left-1 -right-2 h-1 origin-left rounded-full bg-red-700 transition-transform duration-300 ease-out"
-                      />
                     </a>
                   </div>
                 </li>
