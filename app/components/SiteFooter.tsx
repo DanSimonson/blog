@@ -11,7 +11,7 @@ export function SiteFooter() {
   return (
     <footer className="py-6 md:px-8 md:py-0">
       <div className="border rounded-xl container flex flex-col items-center justify-center space-x-4 gap-4 md:h-24 md:flex-row">
-        <p className="w-full text-balance flex justify-between text-xl leading-loose text-muted-foreground md:text-left mr-4">
+        <div className="w-full text-balance flex justify-between text-xl leading-loose text-muted-foreground md:text-left mr-4">
           <div
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
@@ -70,7 +70,7 @@ export function SiteFooter() {
               />
             </a>
           </div>
-        </p>
+        </div>
       </div>
     </footer>
   );
