@@ -21,7 +21,7 @@ export default function Nav() {
             <Link href="/">
               <span className="self-center whitespace-nowrap px-2 py-1 bg-gradient-to-r from-red-500 via-white-500 to bg-blue-500 rounded-xl text-white font-bold flex flex-row justify-around p-10">
                 <GiMountaintop className="size-10" />
-                GitHub
+                mariposaweb
               </span>
             </Link>
           </div>
@@ -118,8 +118,13 @@ export default function Nav() {
                     onMouseLeave={() => setOpen(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
-                      Profile
+                    <a
+                      href={siteConfig.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative text-red-700 text-2xl hover:text-cyan-500"
+                    >
+                      Github
                     </a>
                   </div>
                 </li>
@@ -129,8 +134,13 @@ export default function Nav() {
                     onMouseLeave={() => setOpenTwo(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
-                      Github
+                    <a
+                      href={siteConfig.links.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative text-red-700 text-2xl hover:text-cyan-500"
+                    >
+                      Twitter
                     </a>
                   </div>
                 </li>
@@ -140,7 +150,12 @@ export default function Nav() {
                     onMouseLeave={() => setOpenThree(false)}
                     className="group relative h-fit w-fit"
                   >
-                    <a className="relative text-red-700 text-2xl hover:text-cyan-500">
+                    <a
+                      href={siteConfig.links.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative text-red-700 text-2xl hover:text-cyan-500"
+                    >
                       Linkedin
                     </a>
                   </div>

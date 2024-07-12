@@ -1,13 +1,12 @@
 import { client, urlFor } from "@/lib/sanity";
 import { simpleBlogCard } from "@/lib/interface";
-//import { Card, CardContent } from "@/components/ui/card";
 import { CardContainer, CardBody, CardItem } from "../components/ui/3d-card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LampDemo } from "@/components/ui/lamp";
 import { SiteFooter } from "./components/SiteFooter";
-
+import About from "./components/About";
 
 export const revalidate = 30; // revalidate every 30 seconds
 
@@ -32,7 +31,7 @@ export default async function Home() {
         <LampDemo />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
         {data.map((post, idx) => (
           <CardContainer key={idx} className=" w-96">
             <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-2">
@@ -59,7 +58,8 @@ export default async function Home() {
           </CardContainer>
         ))}
       </div>
-      <SiteFooter/>
+      <About />
+      <SiteFooter />
     </>
   );
 }
