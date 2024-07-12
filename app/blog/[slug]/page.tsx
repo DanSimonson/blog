@@ -39,11 +39,11 @@ export default async function BlogArticle({
         alt="blog image"
         width={800}
         height={800}
-        className="rounded-lg mt-8 border"
+        className="rounded-lg mt-8 border mx-auto"
         priority
       />
-      <div className="mt-16 prose-blue prose-lg">
-        <PortableText value={data.content} />
+      <div className="mx-auto w-[50%] mt-16 prose-blue prose-lg">
+        <PortableText  value={data.content} />
       </div>
     </div>
   );
