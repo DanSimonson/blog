@@ -179,7 +179,9 @@ const About = () => {
                 className="bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white"
                 value="who is Dan"
               >
-                <div>I'm Dan <br/> I love programming</div>
+                <div>
+                  I&apos;m Dan <br /> I love programming
+                </div>
               </TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
