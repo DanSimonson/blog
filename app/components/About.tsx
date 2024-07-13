@@ -166,15 +166,15 @@ const About = () => {
           opacity: 1,
           transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
         }}
-        className="border border-green-500 min-h[80vh] flex items-center justify-center py-12 xl:py-0 mt-40"
+        className="min-h[80vh] flex items-center justify-center py-12 xl:py-0 mt-40"
       >
-        <div className="border border-white container mx-auto">
+        <div className="container mx-auto">
  
           <Tabs
             defaultValue="experience"
             className="flex flex-col xl:flex-row gap-[60px]"
           >
-            {/* bg-transparent */}
+            
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
               <TabsTrigger className='bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white' value='who is Dan'><Button><p className='pb-4 pt-3'>I'm Dan <br/> I love programming</p></Button> </TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -182,7 +182,7 @@ const About = () => {
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="info">About Me</TabsTrigger>
             </TabsList>
-            <div className="min-h-[70vh] w-full">
+            <div className="min-h-[70vh] w-full pt-3 pl-2 pr-2 pb-2">
               <TabsContent value="experience" className="w-full">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{experience.title}</h3>
