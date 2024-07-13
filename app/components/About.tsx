@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+import { MovingBorder, Button } from "@/components/ui/moving-border";
 
 const info = {
   title: "About me",
@@ -168,13 +169,14 @@ const About = () => {
         className="border border-green-500 min-h[80vh] flex items-center justify-center py-12 xl:py-0 mt-40"
       >
         <div className="border border-white container mx-auto">
-
+ 
           <Tabs
             defaultValue="experience"
             className="flex flex-col xl:flex-row gap-[60px]"
           >
+            {/* bg-transparent */}
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-              <TabsTrigger className='border border-indigo-500 bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white' value='who is Dan'>I'm Dan <br/> I love programming </TabsTrigger>
+              <TabsTrigger className='bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white' value='who is Dan'><Button><p className='pb-4 pt-3'>I'm Dan <br/> I love programming</p></Button> </TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
               <TabsTrigger value="skills">Skills</TabsTrigger>
