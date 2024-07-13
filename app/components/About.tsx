@@ -112,7 +112,7 @@ const education = {
     },
   ],
 };
-//I have experience working on all levels of the system development lifecycle.
+
 const skills = {
   title: "My Skills",
   description:
@@ -169,14 +169,20 @@ const About = () => {
         className="min-h[80vh] flex items-center justify-center py-12 xl:py-0 mt-40"
       >
         <div className="container mx-auto">
- 
           <Tabs
             defaultValue="experience"
             className="flex flex-col xl:flex-row gap-[60px]"
           >
-            
+            {/* <p className='pb-4 pt-3'></p> */}
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-              <TabsTrigger className='bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white' value='who is Dan'><Button><p className='pb-4 pt-3'>I'm Dan <br/> I love programming</p></Button> </TabsTrigger>
+              <TabsTrigger
+                className="bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white"
+                value="who is Dan"
+              >
+                <Button>
+                  I'm Dan <br /> I love programming
+                </Button>
+              </TabsTrigger>
               <TabsTrigger value="experience">Experience</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
               <TabsTrigger value="skills">Skills</TabsTrigger>
