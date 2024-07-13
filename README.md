@@ -10,7 +10,8 @@
 
 ## App Info
 
-This is Dan Simonson's Website/Blogsite displaying articles of interest <br/> and general information about me.
+This is Dan Simonson's Website/Blogsite displaying articles of interest\
+and general information about me.
 
 ### Author
 
