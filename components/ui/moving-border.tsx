@@ -40,7 +40,6 @@ export function Button({
       }}
       {...otherProps}
     >
-      {/* calc(${borderRadius} * 0.96) */}
       <div
         className="absolute inset-0"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}

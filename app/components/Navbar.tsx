@@ -9,7 +9,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [openTwo, setOpenTwo] = useState(false);
   const [openThree, setOpenThree] = useState(false);
-  //bg-cyan-400 border border-green-800
+
   return (
     <nav className="w-full relative flex justify-between  px-4 py-5">
       <div>

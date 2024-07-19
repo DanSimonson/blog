@@ -7,10 +7,10 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 const space_Grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "mariposaweb blog",
+  title: "mariposaweb",
   description: "JavaScript Insights",
 };
-// className="max-w-4xl mx-auto px-2 py-5"
+
 export default function RootLayout({
   children,
 }: Readonly<{

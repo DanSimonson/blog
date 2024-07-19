@@ -5,25 +5,41 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LampDemo } from "@/components/ui/lamp";
+import Paginate from "./components/Paginate";
 import { SiteFooter } from "./components/SiteFooter";
 import About from "./components/About";
-
-export const revalidate = 30; // revalidate every 30 seconds
-
-async function getData() {
-  const query = `*[_type=='blog']| order(_createAt desc){
+/** 
+ * `*[_type=='blog']| order(_createAt desc){
   title,
     smallDescription,
     "currentSlug": slug.current,
     titleImage
 }`;
+ */
+export const revalidate = 30; // revalidate every 30 seconds
 
-  const data = await client.fetch(query);
+async function getData(lastPageNum: number = 1) {
+  const query = `*[_type == "blog"] | order(_createdAt, desc) [${lastPageNum}...${lastPageNum + 1}] {
+  _id, title, _createdAt, content, smallDescription, titleImage, "currentSlug": slug.current
+}`;
+
+  const data = await client.fetch(query, { lastId: lastPageNum });
   return data;
 }
 
-export default async function Home() {
-  const data: simpleBlogCard[] = await getData();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const page = Number(searchParams?.page ?? 0);
+  console.log("typeof(page): ", typeof page);
+  console.log("page: ", page);
+  const data: simpleBlogCard[] = await getData(page);
+  console.log("data: ", data);
 
   return (
     <>
@@ -58,6 +74,7 @@ export default async function Home() {
           </CardContainer>
         ))}
       </div>
+      <Paginate />
       <About />
       <SiteFooter />
     </>
