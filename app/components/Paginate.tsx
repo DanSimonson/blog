@@ -1,10 +1,6 @@
 "use client";
 
-import { MouseEventHandler, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { type NextRequest } from "next/server";
-import { useUrl } from "nextjs-current-url";
-import Link from "next/link";
 
 import {
   Pagination,
@@ -19,14 +15,10 @@ import {
 let page = 0;
 
 function Paginate() {
-  const { href } = useUrl() ?? {};
-  console.log("href: ", href);
   const pathname = usePathname();
-  //console.log("pathname: ", pathname);
-  const { replace } = useRouter();
+  //const { replace } = useRouter();
+  const router = useRouter();
   const searchParams = useSearchParams();
-  //console.log("searchParams: ", searchParams);
-  //const [page, setPage] = useState(0);
 
   const nextPage = () => {
     if (page === 2) {
@@ -36,15 +28,8 @@ function Paginate() {
     }
     const params = new URLSearchParams(searchParams);
     params.set("page", page.toString());
-    replace(`${pathname}?${params}`);
-    //router.push({ href });
-    /************************************ */
-    console.log("params after page: ", params);
-    console.log("pathname: ", pathname);
-    console.log("page.toString: ", page.toString());
-    console.log("href: ", href);
-    const myurl = `${pathname}?${searchParams}`;
-    console.log("pathname+searchParams url: ", myurl);
+    //replace(`${pathname}?${params}`);
+    router.push(`${pathname}?${params}`, { scroll: false });
   };
   const prevPage = () => {
     if (page === 0) {
@@ -54,7 +39,8 @@ function Paginate() {
     }
     const params = new URLSearchParams(searchParams);
     params.set("page", page.toString());
-    replace(`${pathname}?${params}`);
+    //replace(`${pathname}?${params}`);
+    router.push(`${pathname}?${params}`, { scroll: false });
   };
 
   return (
@@ -66,9 +52,6 @@ function Paginate() {
         <PaginationItem>
           <PaginationLink>{page}</PaginationLink>
         </PaginationItem>
-        {/* <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem> */}
         <PaginationItem>
           <PaginationNext onClick={nextPage} />
         </PaginationItem>

@@ -36,10 +36,7 @@ export default async function Home({
   };
 }) {
   const page = Number(searchParams?.page ?? 0);
-  console.log("typeof(page): ", typeof page);
-  console.log("page: ", page);
   const data: simpleBlogCard[] = await getData(page);
-  console.log("data: ", data);
 
   return (
     <>
