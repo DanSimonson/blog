@@ -16,30 +16,29 @@ let page = 0;
 
 function Paginate() {
   const pathname = usePathname();
-  //const { replace } = useRouter();
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const nextPage = () => {
-    if (page === 2) {
+    console.log("page: ", page);
+    if (page === 3) {
       return;
     } else {
-      page++;
+      page = page + 3;
     }
     const params = new URLSearchParams(searchParams);
     params.set("page", page.toString());
-    //replace(`${pathname}?${params}`);
     router.push(`${pathname}?${params}`, { scroll: false });
   };
   const prevPage = () => {
+    console.log("page: ", page);
     if (page === 0) {
       return;
     } else {
-      page--;
+      page = page - 3;
     }
     const params = new URLSearchParams(searchParams);
     params.set("page", page.toString());
-    //replace(`${pathname}?${params}`);
     router.push(`${pathname}?${params}`, { scroll: false });
   };
 
@@ -50,7 +49,7 @@ function Paginate() {
           <PaginationPrevious onClick={prevPage} />
         </PaginationItem>
         <PaginationItem>
-          <PaginationLink>{page}</PaginationLink>
+          <PaginationLink></PaginationLink>
         </PaginationItem>
         <PaginationItem>
           <PaginationNext onClick={nextPage} />
@@ -61,6 +60,6 @@ function Paginate() {
 }
 
 export default Paginate;
-function preventDefault() {
-  throw new Error("Function not implemented.");
-}
+// function preventDefault() {
+//   throw new Error("Function not implemented.");
+// }

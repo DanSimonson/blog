@@ -8,18 +8,11 @@ import { LampDemo } from "@/components/ui/lamp";
 import Paginate from "./components/Paginate";
 import { SiteFooter } from "./components/SiteFooter";
 import About from "./components/About";
-/** 
- * `*[_type=='blog']| order(_createAt desc){
-  title,
-    smallDescription,
-    "currentSlug": slug.current,
-    titleImage
-}`;
- */
+
 export const revalidate = 30; // revalidate every 30 seconds
 
 async function getData(lastPageNum: number = 1) {
-  const query = `*[_type == "blog"] | order(_createdAt, desc) [${lastPageNum}...${lastPageNum + 1}] {
+  const query = `*[_type == "blog"] | order(_createdAt, desc) [${lastPageNum}...${lastPageNum + 3}] {
   _id, title, _createdAt, content, smallDescription, titleImage, "currentSlug": slug.current
 }`;
 
