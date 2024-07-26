@@ -45,6 +45,7 @@ export default async function Home({
                 translateZ="100"
                 className="text-lg font-bold text-neutral-600 dark:text-white"
               >
+                {post.title}
                 <Image
                   width={500}
                   height={500}
@@ -56,9 +57,19 @@ export default async function Home({
                 <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
                   {post.smallDescription}
                 </p>
-                <Button asChild className="w-full mt-7">
-                  <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
-                </Button>
+                <Link
+                  href={`https://mariposablog.hashnode.dev/${post.currentSlug}`}
+                  target="_blank"
+                >
+                  <Button className="w-full mt-7">Read More</Button>
+                  {/* 
+                      Code for using my app instead of hashnode for displayin
+                      single post. May be implemented later with new styles for post page.
+                     ******************************
+                  <Button asChild className="w-full mt-7 border border-white">
+                    <Link href={`/blog/${post.currentSlug}`}>Read More</Link> 
+                  </Button> */}
+                </Link>
               </CardItem>
             </CardBody>
           </CardContainer>
