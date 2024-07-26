@@ -1,32 +1,60 @@
-import { client, urlFor } from "@/lib/sanity";
-import { blogPost } from "@/lib/interface";
-import Image from "next/image";
-import { PortableText } from "next-sanity";
-import { urlForImage } from "@/sanity/lib/image";
+//import { client, urlFor } from "@/lib/sanity";
+//import { blogPost } from "@/lib/interface";
+//import Image from "next/image";
+//import { PortableText } from "next-sanity";
+//import { urlForImage } from "@/sanity/lib/image";
 
-export const revalidate = 30; // revalidate every 30 seconds
+//export const revalidate = 30; // revalidate every 30 seconds
 
-async function getData(slug: string) {
-  const query = `*[_type == 'blog' && slug.current =='${slug}']{
-  "currentSlug": slug.current,
-    title,
-    content,
-    titleImage,
-}[0]`;
+// async function getData(slug: string) {
+//   const query = `*[_type == 'blog' && slug.current =='${slug}']{
+//   "currentSlug": slug.current,
+//     title,
+//     content,
+//     titleImage,
+// }[0]`;
 
-  const data = await client.fetch(query);
-  return data;
-}
+//   const data = await client.fetch(query);
+//   return data;
+// }
 
 /* Page to display a single post. This is page is unused and user is redirected tohasnode blog page because of superior styling for showing code */
-export default async function BlogArticle({
+export default async function BlogArticle() {
+  //const data: blogPost = await getData(params.slug);
+
+  return (
+    <div>
+      <h1>unused page</h1>
+    </div>
+  );
+}
+
+/* unused typescript
+{
   params,
 }: {
   params: { slug: string };
-}) {
-  const data: blogPost = await getData(params.slug);
+}
+ */
+/*           unused code
+ ****************************************
+ */
 
-  return (
+// const myPortableTextComponents = {
+//   types: {
+//     image: ({ value }: any) => (
+//       <Image
+//         src={urlForImage(value).url()}
+//         alt="Post"
+//         width={700}
+//         height={700}
+//       />
+//     ),
+//   },
+// };
+
+/*
+return (
     <div className="mt-8">
       <h1>
         <span className="block text-base text-center text-red-800 dark:text-rose-700 font-semibold tracking-wide uppercase">
@@ -52,17 +80,4 @@ export default async function BlogArticle({
       </div>
     </div>
   );
-}
-
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }: any) => (
-      <Image
-        src={urlForImage(value).url()}
-        alt="Post"
-        width={700}
-        height={700}
-      />
-    ),
-  },
-};
+ */
