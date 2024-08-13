@@ -18,7 +18,7 @@
 //   return data;
 // }
 
-/* Page to display a single post. This is page is unused and user is redirected tohasnode blog page because of superior styling for showing code */
+/* Page to display a single post. This is page is unused and user is redirected to hasnode blog page */
 export default async function BlogArticle() {
   //const data: blogPost = await getData(params.slug);
 
