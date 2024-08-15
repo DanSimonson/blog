@@ -57,6 +57,7 @@ export default async function Home({
                 <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
                   {post.smallDescription}
                 </p>
+
                 <Link
                   href={`https://mariposablog.hashnode.dev/${post.currentSlug}`}
                   target="_blank"
