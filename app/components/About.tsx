@@ -1,4 +1,5 @@
 "use client";
+
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -15,7 +16,6 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-import { MovingBorder, Button } from "@/components/ui/moving-border";
 
 const info = {
   title: "About me",
@@ -173,7 +173,6 @@ const About = () => {
             defaultValue="experience"
             className="flex flex-col xl:flex-row gap-[60px]"
           >
-            {/* <p className='pb-4 pt-3'></p> */}
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
               <TabsTrigger
                 className="bg-transparent text-3xl font-bold pb-[40px] text-black dark:text-white"

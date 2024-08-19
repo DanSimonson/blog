@@ -8,6 +8,7 @@ import { LampDemo } from "@/components/ui/lamp";
 import Paginate from "./components/Paginate";
 import { SiteFooter } from "./components/SiteFooter";
 import About from "./components/About";
+import CardsContainer from "./components/CardsContainer";
 
 export const revalidate = 30; // revalidate every 30 seconds
 
@@ -78,6 +79,7 @@ export default async function Home({
       </div>
       <Paginate />
       <About />
+      <CardsContainer />
       <SiteFooter />
     </>
   );
