@@ -34,7 +34,6 @@ export const Card = ({ image, title, text, github }: Props) => {
       variants={fadeInAnimationVariants}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true }}
       className="bg-gradient-to-tl from-purple-600 to-green-800 h-96 w-full relative rounded-md text-2xl text-white "
     >
       <Link
